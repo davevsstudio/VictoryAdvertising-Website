@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang=”en”>
+
+<head>
+<meta charset=”UTF-8”>
+<meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+<title>Quiz with Timer</title>
+<link rel=”stylesheet” href=”style.css”>
+</head>
+<style>
+    •	{
+  Margin: 0;
+  Padding: 0;
+  Box-sizing: border-box;
+}
+
+Body {
+  Font-family: ‘Roboto’, sans-serif;
+  Background-color: #f2f2f2;
+}
+
+Header {
+  Background-color: #0095ff;
+  Color: #fff;
+  Padding: 20px;
+  Text-align: center;
+}
+
+H1 {
+  Font-size: 48px;
+  Margin-bottom: 20px;
+}
+
+#quiz-container {
+  Display: flex;
+  Justify-content: center;
+  Align-items: center;
+  Min-height: 500px;
+}
+
+#quiz {
+  Max-width: 600px;
+  Background-color: #fff;
+  Border-radius: 10px;
+  Padding: 40px;
+  Box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#question {
+  Font-size: 24px;
+  Font-weight: bold;
+  Margin-bottom: 20px;
+}
+
+.choice {
+  Width: 100%;
+  Margin-bottom: 10px;
+  Padding: 10px 20px;
+  Border-radius: 30px;
+  Border: none;
+  Background-color: #f2f2f2;
+  Color: #333;
+  Font-size: 18px;
+  Cursor: pointer;
+  Transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.choice:hover {
+  Background-color: #0095ff;
+  Color: #fff;
+}
+
+.correct {
+  Background-color: #7ebc00;
+  Color: #fff;
+}
+
+.incorrect {
+  Background-color: #c40000;
+  Color: #fff;
+}
+
+.hide {
+  Display: none;
+}
+
+#results-container {
+  Max-width: 600px;
+  Margin: 0 auto;
+  Text-align: center;
+  Padding: 40px;
+  Background-color: #fff;
+  Border-radius: 10px;
+  Box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#results-container h2 {
+  Font-size: 36px;
+  Margin-bottom: 20px;
+}
+
+#results {
+  Font-size: 24px;
+  Margin-bottom: 20px;
+}
+
+#restart {
+  Padding: 10px 20px;
+  Border-radius: 30px;
+  Border: none;
+  Background-color: #0095ff;
+  Color: #fff;
+  Font-weight: bold;
+  Text-transform: uppercase;
+  Letter-spacing: 1px;
+  Cursor: pointer;
+  Transition: background-color 0.3s ease-in-out;
+}
+
+#restart:hover {
+  Background-color: #0082e6;
+}
+
+#timer-container {
+  Width: 100%;
+  Height: 20px;
+  Background-color: #f2f2f2;
+  Margin-top: 20px;
+  Border-radius: 10px;
+  Overflow: hidden;
+}
+
+.timer-bar {
+  Height: 100%;
+  Background-color: #0095ff;
+  Transition: width 1s ease-in-out;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  H1 {
+    Font-size: 36px;
+  }
+  #quiz {
+    Padding: 20px;
+  }
+}
+
+</style>
+
+<body>
+
+<header id=”header”>
+<h1>Quiz with Timer</h1>
+</header>
+
+<main id=”main”>
+<div id=”quiz-container”>
+<div id=”quiz” class=”hide”>
+<div id=”question”></div>
+<div id=”choices”></div>
+</div>
+</div>
+<div id=”results-container” class=”hide”>
+<h2>Your Results</h2>
+<div id=”results”></div>
+<button id=”restart”>Restart Quiz</button>
+</div>
+<div id=”timer-container”>
+<div id=”timer” class=”timer-bar”></div>
+</div>
+</main>
+<script>
+Const questions = [
+    {
+      Question: “What is the capital of France?”,
+      Choices: [“Paris”, “London”, “Madrid”, “Berlin”],
+      Answer: “Paris”
+    },
+    {
+      Question: “What is the largest country in the world?”,
+      Choices: [“China”, “United States”, “Russia”, “Canada”],
+      Answer: “Russia”
+    },
+    {
+      Question: “What is the tallest animal in the world?”,
+      Choices: [“Elephant”, “Giraffe”, “Horse”, “Lion”],
+      Answer: “Giraffe”
+    },
+    {
+      Question: “What is the smallest planet in our solar system?”,
+      Choices: [“Venus”, “Mercury”, “Mars”, “Jupiter”],
+      Answer: “Mercury”
+    }
+  ];
+  
+  ConstquizContainer = document.getElementById(‘quiz-container’);
+  Const quiz = document.getElementById(‘quiz’);
+  ConstquestionEl = document.getElementById(‘question’);
+  ConstchoicesEl = document.getElementById(‘choices’);
+  ConstresultsContainer = document.getElementById(‘results-container’);
+  ConstresultsEl = document.getElementById(‘results’);
+  ConstrestartBtn = document.getElementById(‘restart’);
+  ConsttimerEl = document.getElementById(‘timer’);
+  
+  Let currentQuestion = 0;
+  Let timeLeft = 60;
+  Let timerInterval;
+  
+  // Start quiz
+  Function startQuiz() {
+    // Hide start button
+  quizContainer.classList.add(‘hide’);
+    // Show quiz
+  Quiz.classList.remove(‘hide’);
+    // Show first question
+  showQuestion();
+    // Start timer
+  startTimer();
+  }
+  
+  // Show question
+  Function showQuestion() {
+  Const question = questions[currentQuestion];
+  questionEl.textContent = question.question;
+  choicesEl.innerHTML = ‘’;
+  question.choices.forEach(choice => {
+  constchoiceEl = document.createElement(‘button’);
+  choiceEl.textContent = choice;
+  choiceEl.classList.add(‘choice’);
+  choiceEl.addEventListener(‘click’, answerQuestion);
+  choicesEl.appendChild(choiceEl);
+    });
+  }
+  
+  // Answer question
+  Function answerQuestion(event) {
+  ConstselectedChoice = event.target;
+  Const question = questions[currentQuestion];
+  Const correct = question.answer === selectedChoice.textContent;
+    // Add class based on correct/incorrect
+  selectedChoice.classList.add(correct ? ‘correct’ : ‘incorrect’);
+    // Show next question after 1 second
+  setTimeout(() => {
+      // Remove class from selected choice
+  selectedChoice.classList.remove(‘correct’, ‘incorrect’);
+      if (correct) {
+        // Increase score if correct
+  resultsEl.textContent = parseInt(resultsEl.textContent) + 1;
+      }
+      // Move to next question
+  currentQuestion++;
+      // If there are more questions, show next question
+      If (currentQuestion<questions.length) {
+  showQuestion();
+      } else {
+        // End quiz if no more questions
+  endQuiz();
+      }
+    }, 1000);
+  }
+  
+  // End quiz
+  Function endQuiz() {
+    // Stop timer
+  clearInterval(timerInterval);
+    // Hide quiz
+  Quiz.classList.add(‘hide’);
+    // Show results
+  resultsContainer.classList.remove(‘hide’);
+  }
+  
+  // Restart quiz
+  Function restartQuiz() {
+    // Reset variables
+  currentQuestion = 0;
+  resultsEl.textContent = ‘0’;
+  timeLeft = 60;
+    // Restart timer
+  startTimer();
+    // Hide results
+  resultsContainer.classList.add(‘hide’);
+    // Show quiz
+  Quiz.classList.remove(‘hide’);
+    // Show first question
+  showQuestion();
+  }
+  
+  // Start timer
+  Function startTimer() {
+  timerEl.style.width = ‘100%’;
+  timerInterval = setInterval(() => {
+  timeLeft--;
+  const width = timerEl.offsetWidth;
+  constnewWidth = (timeLeft / 60) * width;
+  timerEl.style.width = newWidth + ‘px’;
+      if (timeLeft<= 0) {
+  endQuiz();
+      }
+    }, 1000);
+  }
+  
+  // Event listeners
+  Window.addEventListener(‘load’, () => {
+  restartBtn.addEventListener(‘click’, restartQuiz);
+  });
+  
+  // Start quiz on load
+  startQuiz();
+   </script>
+</body>
+</html>

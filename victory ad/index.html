@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victory Advertising-Home</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        text-decoration: none;
+        outline: none;
+        border: none;
+        scroll-behavior: smooth;
+        font-family: 'Poppins', sans-serif;
+        }
+        :root{
+            --bg-color:#1f242d;
+            --second-bg-color:#323946;
+            --text-color: #fff;
+            --main-color: #0ef;
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+        body{
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+        section{
+            min-height: 100vh;
+            padding: 10rem 9% 2rem;
+        }
+        .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 9%;
+            background: var(--bg-color);
+            display: flex;
+            justify-content: space-between;
+            z-index: 100;
+        }
+        .header.sticky{
+            border-bottom: .1rem solid rgba(0, 0, 0, .2);
+        }
+        .logo{
+            font-size: 2.5rem;
+            color: var(--text-color);
+            font-weight: 600;
+            cursor: default;
+        }
+        .navbar a{
+            font-size: 1.7rem;
+            color: var(--text-color);
+            margin-left: 4rem;
+            transition: 3s;
+        }
+        .navbar a:hover,.navbar a.active{
+            color: var(--main-color);
+        }
+        #menu-icon{
+            font-size: 3.6rem;
+            color: var(--text-color);
+            
+        }
+        .home{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .home-content h3{
+            font-size: 3.2rem;
+            font-weight: 700;            
+        }
+        span{
+            color: var(--main-color);
+            font-size: 3.2rem;
+            font-weight: 700;   
+        }
+        .home-content h3 :nth-of-type(2){
+            margin-bottom: 2rem;
+        }
+        .home-content h1{
+            font-size: 5.6rem;
+            font-weight: 700;
+            line-height: 1.3rem;
+        }
+        .home-img img{
+            width: 29vw;
+            height: 29vw;
+            margin-left: 55px;
+        }
+        .home-content h5{
+            font-size: 2.6rem;
+            
+        }
+        .btn{
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background: var(--main-color);
+            border-radius: 4rem;
+            box-shadow: 0 0 1rem var(--main-color);
+            font-size: 1.6rem;
+            color: var(--second-bg-color);
+            letter-spacing: 0.5rem;
+            font-weight: 600;
+            transition: .5s ease;
+        }
+        .btn:hover{
+            box-shadow: none;
+        }
+        h5{
+            font-size: 2.6rem;
+        }
+            
+</style>
+<body>
+    <body>
+        <header class="header">
+            <a href="#" class="logo">Victory Adverstising<a>
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <nav class="navbar">
+                <a href="vitoryad.html" class="active">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="#services">Services</a>
+                <a href="prot.html">Portfiolo</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+        </header>
+        <section class="home" id="home">
+            <div class="home-content">
+              <span> Victory Adverstising</span>  <h5> Is your one stop - shop solution for quality printinmg services and safety equipment with our extensive range of offerings,including stickers, banners, raincoats,safety boots, and more, we cater to all your printing and safety needs our expert teamensures top - notch
+                    craftsmanship,timelydelivery, and exceptional customer service. Trust Victory adverstising for professional results</h5>
+                
+                
+                <br/>
+                <a href="#Contact" class="btn">Read More</a>
+            </div>
+            <div class="home-img">
+                <img src="vic 1.jpg" alt="">
+            </div>
+   
+</body>
+</html>

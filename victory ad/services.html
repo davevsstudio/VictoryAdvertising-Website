@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victory Adevertising</title>
+</head>
+<style> 
+ * {
+        box-sizing: border-box;
+        text-decoration: none;
+        outline: none;
+        border: none;
+        scroll-behavior: smooth;
+        font-family: 'Poppins', sans-serif;
+        }
+        :root{
+            --bg-color:#1f242d;
+            --second-bg-color:#323946;
+            --text-color: #fff;
+            --main-color: #0ef;
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+        body{
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+        section{
+            min-height: 100vh;
+            padding: 10rem 9% 2rem;
+        }
+        .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 9%;
+            background: var(--bg-color);
+            display: flex;
+            justify-content: space-between;
+            z-index: 100;
+        }
+        .header.sticky{
+            border-bottom: .1rem solid rgba(0, 0, 0, .2);
+        }
+        .logo{
+            font-size: 2.5rem;
+            color: var(--text-color);
+            font-weight: 600;
+            cursor: default;
+        }
+        .navbar a{
+            font-size: 1.7rem;
+            color: var(--text-color);
+            margin-left: 4rem;
+            transition: 3s;
+        }
+        .navbar a:hover,.navbar a.active{
+            color: var(--main-color);
+        }
+        #menu-icon{
+            font-size: 3.6rem;
+            color: var(--text-color);
+            
+        }
+        span{
+            color: var(--main-color);
+            font-size: 3.2rem;
+            font-weight: 700;   
+        }
+.services h2{
+            margin-bottom: 5rem;
+        }
+        .services-container{
+            justify-content: center;
+            display: flex;
+           align-items: center;
+           flex-wrap:wrap ;
+            gap: 2rem;
+
+        } 
+        .services-container .services-box{
+            flex: 1 1 30rem;
+            background: var(--second-bg-color);
+            padding: 3rem 2rem 4rem;
+            border-radius: 2rem;
+            text-align: center;
+            border: .2rem solid var(--bg-color);
+            transition: .5s ease;
+        }
+        .services-container .services-box:hover{
+            border-color: (--main-color);
+            transform: scale(1.02);
+        }
+       .services-box p{
+        font-size: 1.2rem;
+        margin: 2rem 0 3rem;
+       }
+       .btn{
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background: var(--main-color);
+            border-radius: 4rem;
+            box-shadow: 0 0 1rem var(--main-color);
+            font-size: 1.6rem;
+            color: var(--second-bg-color);
+            letter-spacing: 0.5rem;
+            font-weight: 600;
+            transition: .5s ease;
+        }
+        .btn:hover{
+            box-shadow: none;
+        }
+        h2{
+            font-size: 3.2rem;
+            font-weight: 700;  
+        }
+        h3{
+            font-size: 1.6rem;
+        }
+</style>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Victory Adverstising<a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="vitoryad.html" >Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="prot.html">Portfiolo</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+    <section class="services" id="services">
+       <center> <h2> Our <span>Services</span></h2> </center>
+       
+        <div class="services-container">
+        <div class="services-box">
+            <i class="bx bx-code-alt"></i> 
+            <h3> Printing Services </h3>
+            <p> FROM EYE - CATCHING STICKERS TOIMPACTFUL BANNERS TO AWARDS, T - SHIRTPRINTING, MONOGRAM , WE PROVIDE COMPREHENSIVE PRINTING SOLUTIONSTAILORED TO YOUR NEEDS
+            </p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+       
+    
+        <br/>
+            <div class="services-box">
+                <i class="bx bx-code-alt"></i>
+                <h3>Saftey Gadgets</h3>
+                <p>STAY PROTECTED WITH OUR HIGH QUALITYSAFETY DEVICES, INCLUDING SAFETYJACKETS, HELMETS, SAFETY BOOTS ANDMORE PROMOTING A SECURE WORKENVIRONMENT
+                </p>
+                <a href="#" class="btn">Read More</a>
+        </div>
+  
+        <div class="services-box">
+            <i class="bx bx-code-alt"></i>
+            <h3> Comapny Seal And Stamp</h3>
+            <p> OUR RELIABLE COMPANY SEAL AND STAMPSERVICES ENSURE AUTHENTICITY ANDPROFESSIONALISM FOR YOUR IMPORTANTCORPORATE DOCUMENTS.
+            </p>
+            <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </div>
+    </section>
+            
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victory Advertising-Home</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        text-decoration: none;
+        outline: none;
+        border: none;
+        scroll-behavior: smooth;
+        font-family: 'Poppins', sans-serif;
+        }
+        :root{
+            --bg-color:#1f242d;
+            --second-bg-color:#323946;
+            --text-color: #fff;
+            --main-color: #0ef;
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+        body{
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+        section{
+            min-height: 100vh;
+            padding: 10rem 9% 2rem;
+        }
+        .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 9%;
+            background: var(--bg-color);
+            display: flex;
+            justify-content: space-between;
+            z-index: 100;
+        }
+        .header.sticky{
+            border-bottom: .1rem solid rgba(0, 0, 0, .2);
+        }
+        .logo{
+            font-size: 2.5rem;
+            color: var(--text-color);
+            font-weight: 600;
+            cursor: default;
+        }
+        .navbar a{
+            font-size: 1.7rem;
+            color: var(--text-color);
+            margin-left: 4rem;
+            transition: 3s;
+        }
+        .navbar a:hover,.navbar a.active{
+            color: var(--main-color);
+        }
+        #menu-icon{
+            font-size: 3.6rem;
+            color: var(--text-color);
+            
+        }
+        .home{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .home-content h3{
+            font-size: 3.2rem;
+            font-weight: 700;            
+        }
+        span{
+            color: var(--main-color);
+            font-size: 3.2rem;
+            font-weight: 700;   
+        }
+
+            
+        
+        .btn{
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background: var(--main-color);
+            border-radius: 4rem;
+            box-shadow: 0 0 1rem var(--main-color);
+            font-size: 1.6rem;
+            color: var(--second-bg-color);
+            letter-spacing: 0.5rem;
+            font-weight: 600;
+            transition: .5s ease;
+        }
+        .btn:hover{
+            box-shadow: none;
+        }
+        h5{
+            font-size: 2.6rem;
+        }
+        .Portfiolo{
+        background: var(--second-bg-color);
+       }
+       .Portfiolo h2{
+        margin-bottom: 4rem;
+       }
+       .Portfiolo .portfiolo-container {
+        justify-content: center;
+            display: flex;
+           align-items: center;
+           flex-wrap:wrap ;
+            gap: 2rem;
+       }
+       .Portfiolo .portfiolo-box{
+        position: relative;
+        border: 2rem;
+            flex: 1 1 30rem;
+            background: var(--second-bg-color);
+            padding: 3rem 2rem 4rem;
+            border-radius: 2rem;
+            text-align: center;
+            box-shadow: 0 0 1rem var(--bg-color);
+            overflow: hidden;
+            transition: .5s ease;
+        }
+        .portfiolo-box img{
+            width: 100%;
+            transition: .5s ease;
+        }
+        .portfiolo-box:hover img{
+            transform: scale(1.1);
+        }
+        .portfiolo-box .portfiolo-layer{
+            position:absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align:center;
+            padding: 0.4rem;
+            transform: translateY(100%);
+            transition: .5s ease;
+        }
+        .portfiolo-box:hover .portfiolo-layer{
+            transform: translateY(0);
+        }
+        .portfiolo-layer h4{
+            font-size: 3rem;
+        }
+        .portfiolo-layer p{
+            font-size: 1.6rem;
+            margin: .3rem 0 1rem;
+        }
+        .portfiolo-layer a{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background: var(--text-color);
+            border-radius: 50%;
+        }
+        .portfiolo-layer a i{
+            font-size: 2rem;
+            color: var(--second-bg-color);
+
+        }
+        h2{
+            font-size: 3.2rem;
+            font-weight: 700;  
+        }
+        h3{
+            font-size: 1.6rem;
+        }
+        span{
+            color: var(--main-color);
+            font-size: 3.2rem;
+            font-weight: 700;   
+        }
+</style>
+<body>
+    <body>
+        <header class="header">
+            <a href="#" class="logo">Victory Adverstising<a>
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <nav class="navbar">
+                <a href="vitoryad.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="prot.html" class="active">Portfiolo</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+        </header>
+        
+        <section class="Portfiolo" id="portfiolo">
+            <center> <h2> Lastest <span>Projects</span></h2> </center>
+            <div class="portfiolo-container">
+                <div class="portfiolo-box">
+                    <img src="work3.jpg">
+                    <div class="portfiolo-layer">
+                        <h4> Sign Board</h4>
+                        <p> We make beautiful, unique and qualitySign Board</p>
+                        <a href="#"><i>|</i></a>
+                        
+                    </div>
+                </div>
+                
+                    <div class="portfiolo-box">
+                        <img src="award.jpg">
+                        <div class="portfiolo-layer">
+                            <h4>Award</h4>
+                            <p> We do beautiful and fine designs with all fine stuffs</p>
+                            <a href="#"><i>|</i></a>
+                        </div>
+                    </div>
+                    
+                        <div class="portfiolo-box">
+                            <img src="clo..jpg">
+                            <div class="portfiolo-layer">
+                                <h4> Safety Jackets</h4>
+                                <p> We sell different saftey equipment like saftey jackets, saftey boots, raincoats e.tc to ensure safety in the work area</p>
+                                <a href="#"><i>|</i></a>
+                            </div>
+                        </div>
+                        
+                            <div class="portfiolo-box">
+                                <img src="bus.jpg">
+                                <div class="portfiolo-layer">
+                                    <h4> Branding</h4>
+                                    <p> We branding for staionarys, cars, umbrella, mug e.tc</p>
+                                    <a href="#"><i>|</i></a>
+                                </div>
+                            </div>
+                            
+                                <div class="portfiolo-box">
+                                    <img src="obs.jpg">
+                                    <div class="portfiolo-layer">
+                                        <h4> Plasctic Fabricaion</h4>
+                                        <p> We do beautiful and fine designs with all fine stuffs</p>
+                                        <a href="#"><i>|</i></a>
+                                    </div>
+                                </div>
+                               
+                                   <div class="portfiolo-box">
+                                        <img src="stamp.jpg">
+                                        <div class="portfiolo-layer">
+                                            <h4> Stamp and Seal</h4>
+                                            <p> We do comapnay stamp and seal </p>
+                                            <a href="#"><i>|</i></a>
+                                        </div>
+                                    </div>
+            </div>
+        </section>
+</body>
+</html>

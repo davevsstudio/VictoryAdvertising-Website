@@ -1,0 +1,197 @@
+<style>
+    * {
+        box-sizing: border-box;
+        text-decoration: none;
+        outline: none;
+        border: none;
+        scroll-behavior: smooth;
+        font-family: 'Poppins', sans-serif;
+        }
+        :root{
+            --bg-color:#1f242d;
+            --second-bg-color:#323946;
+            --text-color: #fff;
+            --main-color: #0ef;
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+        body{
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+        section{
+            min-height: 100vh;
+            padding: 10rem 9% 2rem;
+        }
+        .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 9%;
+            background: var(--bg-color);
+            display: flex;
+            justify-content: space-between;
+            z-index: 100;
+        }
+        .header.sticky{
+            border-bottom: .1rem solid rgba(0, 0, 0, .2);
+        }
+        .logo{
+            font-size: 2.5rem;
+            color: var(--text-color);
+            font-weight: 600;
+            cursor: default;
+        }
+        .navbar a{
+            font-size: 1.7rem;
+            color: var(--text-color);
+            margin-left: 4rem;
+            transition: 3s;
+        }
+        .navbar a:hover,.navbar a.active{
+            color: var(--main-color);
+        }
+        #menu-icon{
+            font-size: 3.6rem;
+            color: var(--text-color);
+            
+        }
+            
+       
+        span{
+            color: var(--main-color);
+            font-size: 3.2rem;
+            font-weight: 700;   
+        }
+        
+        .btn{
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background: var(--main-color);
+            border-radius: 4rem;
+            box-shadow: 0 0 1rem var(--main-color);
+            font-size: 1.6rem;
+            color: var(--second-bg-color);
+            letter-spacing: 0.5rem;
+            font-weight: 600;
+            transition: .5s ease;
+        }
+        .btn:hover{
+            box-shadow: none;
+        }
+        h5{
+            font-size: 2.6rem;
+        }
+        .contact h2{
+            margin-bottom: 3rem;
+
+        }
+        .contact form{
+            max-width: 70rem;
+            margin: 10rem auto;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .contact form .input-box{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+        }
+        .contact form .input-box input,
+        .contact form textarea{
+            width: 100%;
+            padding: 1.5rem;
+            font-size: 1.6rem;
+            border-radius: .8rem;
+            margin: .7rem 0;
+            color: var(--text-color);
+            background: var(--second-bg-color);
+        }
+        .contact form .input-box input{
+            width: 49%;
+        }
+        h2{
+            font-size: 3.2rem;
+            font-weight: 700;  
+        }
+        h3{
+            font-size: 1.6rem;
+        }
+        span{
+            color: var(--main-color);
+            font-size: 3.2rem;
+            font-weight: 700;   
+        }
+        marquee{
+            color: var(--text-color);
+            font-size: 2rem;
+        }
+        
+            
+</style>
+<body>
+    <body>
+        <header class="header">
+            <a href="#" class="logo">Victory Adverstising<a>
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <nav class="navbar">
+                <a href="vitoryad.html" >Home</a>
+                <a href="about.html">About Us</a>
+                <a href="#services">Services</a>
+                <a href="prot.html">Portfiolo</a>
+                <a href="contact.html" class="active">Contact Us</a>
+            </nav>
+        </header>
+        
+        <section class="Contact" id="Contact"  onsubmit="sendEmail(); reset(); return false">
+           <center> <h2 class="heading">Contact <span>Us!</span> </h2></center>
+            <form action="#">
+                <div class="input-box">
+                    <input type="text" placeholder="Full Name">
+                    <input type="email" placeholder="Email Address">
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Phone Number">
+                    <input type="text" placeholder="Email Subject">
+                </div>
+                <textarea name="" id="" cols="30" rows="10" placeholder=" Your Message"></textarea>
+                <input type="submit" send="08177009561"value="Send Message" class="btn">
+                <br/>
+                <br/>
+                <marquee>You can also contact us with the following number: 08033351005, 08177009561</marquee>
+            </form>
+        </section>
+        <footer class="footer">
+
+            <div class="footer-text">
+                <p> Copyright&copy;2023 by Black Stars Studio|All Rights Reserved. </p>
+            </div>
+            <div class="footer-icontop">
+
+            </div>
+        </footer>
+        </section>
+    
+   <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+   <script>
+    function sendEmail(){
+        Email.send({
+            Host : "smtp.yourisp.com",
+            Username : "username",
+            Password : "password",
+            To : 'then@website,com',
+            From: "you@isp.com",
+            Subject : "This Is the subject",
+            Body : "and this is the body"
+        }).then(
+            message => alert(message)
+        ); 
+    }
+   </script>
+</body>
+</html>
